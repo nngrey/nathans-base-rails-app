@@ -101,7 +101,8 @@ from `ZenRailsBaseApp` to your application name, in camel case.
         that should send and receive e-mails in various parts of the
         application.
 4. Run `bundle install`
-5. Customise the authentication setup. You may want to change one or more of
+5. Run yarn install to install the front end (JavaScript) packages listed in packages.json and their dependencies.
+6. Customise the authentication setup. You may want to change one or more of
 the following items:
     - Aside from Devise's default attributes,
     the `User` model also has `role`, `first_name`, and `last_name` attributes.
@@ -113,9 +114,9 @@ the following items:
     - Pundit is used for for authorization. The `User` model has an enum
     attribute called `role`. Its possible values are `:user` and `:admin`. The
     default value is `:user`.
-6. Customize the application colors by overwriting Bootstrap's variables in
+7. Customize the application colors by overwriting Bootstrap's variables in
 `app/assets/stylesheets/global.scss`.
-7. Remove unused items from the application, such as gems from the `Gemfile`,
+8. Remove unused items from the application, such as gems from the `Gemfile`,
 RSpec helpers, custom matchers and shared examples from `spec/support`.
 
 
