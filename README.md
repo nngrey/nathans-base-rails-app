@@ -3,7 +3,7 @@
 ## Summary
 Base or "skeleton" application for Ruby on Rails 5.1 projects. Built to
 minimize the time spent writing boilerplate code and performing repetitive
-setup tasks.
+setup tasks. Forked from https://github.com/brunofacca/zen-rails-base-app
 
 ## Features
 It consists of a Rails 5.1.3 app, including:
@@ -100,7 +100,7 @@ from `ZenRailsBaseApp` to your application name, in camel case.
         - Replace `replace@me.com`  manually by the different e-mail addresses
         that should send and receive e-mails in various parts of the
         application.
-4. Run `bundle install`  
+4. Run `bundle install`
 5. Customise the authentication setup. You may want to change one or more of
 the following items:
     - Aside from Devise's default attributes,
