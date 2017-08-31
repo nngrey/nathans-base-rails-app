@@ -22,14 +22,17 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'haml-rails'
 gem 'bootstrap-sass'
+gem "font-awesome-rails"
 # List of countries and their respective states and cities
 gem 'city-state'
 # Authentication
 gem 'devise'
 # Generate fake user names, e-mails, adresses, IPs, lorem text, etc. Include
 # in all environments as we might use it to seed the DB in test deploys.
+gem 'devise-bootstrap-views'
+gem 'devise_invitable', '~> 1.7.0'
 gem 'faker'
 # Use slugs instead of IDs in URLs. Makes prettier URLs, improves SEO and avoids
 # leaking DB IDs (for security reasons).
@@ -40,6 +43,8 @@ gem 'jquery-rails'
 gem 'kaminari'
 # Authorization
 gem 'pundit'
+gem 'formtastic', '~> 3.0'
+gem 'formtastic-bootstrap'
 # Contact form
 gem 'mail_form'
 # HTTP caching
@@ -67,6 +72,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
+  gem 'shoulda-matchers', '~> 3.1', require: false
   gem 'selenium-webdriver'
   # code coverage analysis tool
   gem 'simplecov', require: false
