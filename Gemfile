@@ -5,11 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# Choose between PostgreSQL and MySQL (comment out one of the following gems)
 gem 'pg', '~> 0.18'
-#gem 'mysql2', '~> 0.4'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -48,11 +44,6 @@ gem 'pundit'
 gem 'mail_form'
 # HTTP caching
 gem 'rack-cache'
-# Locale data for Rails. Rails already comes with i18n capabilities (e.g.,
-# translate model attributes, possibility to place all of the app's strings in
-# YML dictionaries). Only use this gem if you need to translate Rails to one or
-# more non-english languages.
-# gem 'rails-i18n', '~> 5.0.0'
 # Searching, filtering and sorting
 gem 'ransack'
 # Advanced select boxes https://select2.github.io/

@@ -1,19 +1,9 @@
-# Zen Rails Base Application
+# Nathan's Fork of Zen Rails Base Application
 
 ## Summary
-Base or "skeleton" application for Ruby on Rails 5.1 projects. Built to 
-minimize the time spent writing boilerplate code and performing repetitive 
-setup tasks. 
-
-It comes with a preselected set of tools which I believe to be the most
-efficient and widely used. If you are looking for greater flexibility, an
-application template which uses Rails's templating system such as [Rails
-Composer](http://www.railscomposer.com/) should be a better fit as it allows
-the user to choose which templating engine, test framework, JS framework and
-other tools to use.
-
-Although this project is opinionated regarding tool choices, community 
-feedback and contributions are always welcome and highly appreciated.
+Base or "skeleton" application for Ruby on Rails 5.1 projects. Built to
+minimize the time spent writing boilerplate code and performing repetitive
+setup tasks.
 
 ## Features
 It consists of a Rails 5.1.3 app, including:
@@ -33,7 +23,7 @@ It consists of a Rails 5.1.3 app, including:
     and [SimpleCov](https://github.com/colszowka/simplecov).
     - General purpose test helpers, custom matchers and shared examples in
     [spec/support](https://github.com/brunofacca/zen-rails-base-app/tree/master/spec/support).
-    
+
 - Preconfigured authentication with the [Devise
 gem](https://github.com/plataformatec/devise).
 - Preconfigured authorization with the [Pundit
@@ -53,17 +43,17 @@ gem](https://github.com/twbs/bootstrap-sass)) to use as a starting point,
 including:
     - Navigation bar;
     - Displaying of flash messages and validation errors as Bootstrap alerts;
-    - Role-based layout switching: different layouts for guests 
+    - Role-based layout switching: different layouts for guests
     (unauthenticated users), ordinary users and admins;
 - Controller concerns such as `SkipAuthorization`.
-- User-friendly error messages (flash) on exceptions such as 
+- User-friendly error messages (flash) on exceptions such as
 `ActiveRecord::DeleteRestrictionError` and `Pundit::NotAuthorizedErrorand`.
 - User management interface for admins in `/admin/users` with pagination
-([kaminari gem](https://github.com/kaminari/kaminari)) and searching/filtering 
+([kaminari gem](https://github.com/kaminari/kaminari)) and searching/filtering
 ([ransack
-gem](https://github.com/activerecord-hackery/ransack)). Accessible only by 
-users with "admin" role. 
-- Seed users for the development environment. Run `rails db:seed` to 
+gem](https://github.com/activerecord-hackery/ransack)). Accessible only by
+users with "admin" role.
+- Seed users for the development environment. Run `rails db:seed` to
 create them:
     - Ordinary user: email: `user@test.com` / password: `Devpass1`
     - Admin user: email: `admin@test.com` / password: `Devpass1`
@@ -78,7 +68,7 @@ gem](https://github.com/ryanb/letter_opener)).
   including the replacement of the default `data-confirm` confirmation by a
   better-looking version.
   - ZenUtils: a small JavaScript library consisting of utility functions. See
-  [app/assets/javascripts/zen-utils.js](https://github.com/brunofacca/zen-rails-base-app/blob/master/app/assets/javascripts/zen-utils.js).  
+  [app/assets/javascripts/zen-utils.js](https://github.com/brunofacca/zen-rails-base-app/blob/master/app/assets/javascripts/zen-utils.js).
 - SCSS utility classes for alignment, spacing and font size standardization. See
 [app/assets/stylesheets/utility-classes.scss](https://github.com/brunofacca/zen-rails-base-app/blob/master/app/assets/stylesheets/utility-classes.scss).
 - High test coverage.
@@ -89,13 +79,8 @@ gem](https://github.com/ryanb/letter_opener)).
 - Required for running JavaScript-enabled feature specs:
     - [Selenium](http://www.seleniumhq.org/projects/webdriver/)
     - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/)
-    - [Xvfb](https://www.x.org/archive/X11R7.6/doc/man/man1/Xvfb.1.xhtml) if running feature specs on a console-only (no graphical 
+    - [Xvfb](https://www.x.org/archive/X11R7.6/doc/man/man1/Xvfb.1.xhtml) if running feature specs on a console-only (no graphical
     interface) *nix environment.
-
-Consider using my [Zen Rails Development
-Environment](https://github.com/brunofacca/rails-development-environment). It
- consists of a Ubuntu 16.04 (Xenial Xerus) Vagrant VM with all of the 
- above dependencies preinstalled.
 
 ## Usage
 Setup tasks such as configuring  time zones, default locale and action mailer
@@ -104,30 +89,22 @@ steps as they are not specific to this base app.
 
 1. Fork this repository.
 2. Clone the forked repository to your machine.
-3. Rename the application: 
-    1. *Required*: change the module name in `config/application.rb` 
+3. Rename the application:
+    1. *Required*: change the module name in `config/application.rb`
 from `ZenRailsBaseApp` to your application name, in camel case.
-    2. *Optional*: Use your IDE's "search all files" feature to find and 
+    2. *Optional*: Use your IDE's "search all files" feature to find and
     replace the following strings:
-        - Replace `zen_rails_base_app` by `your_app_name` 
-        - Replace `ZEN_RAILS_BASE_APP` by `YOUR_APP_NAME`
+        - Replace `nathans_base_app` by `your_app_name`
+        - Replace `Nathans_Base_App` by `YOUR_APP_NAME`
         - Replace `Project Name` by the project's name
         - Replace `replace@me.com`  manually by the different e-mail addresses
-        that should send and receive e-mails in various parts of the 
+        that should send and receive e-mails in various parts of the
         application.
-4. Run `bundle install`
-5. Configure the databases:
- 
-    1. If using PostgreSQL, uncomment the `pg` gem from the `Gemfile`. If 
-    using MySQL, uncomment the `mysql2` gem.
-
-    2. Uncomment the section of `config/database.yml` corresponding to your 
-    chosen DBMS.
-  
-5. Customise the authentication setup. You may want to change one or more of 
-the following items: 
+4. Run `bundle install`  
+5. Customise the authentication setup. You may want to change one or more of
+the following items:
     - Aside from Devise's default attributes,
-    the `User` model also has `role`, `first_name`, and `last_name` attributes. 
+    the `User` model also has `role`, `first_name`, and `last_name` attributes.
     - Aside from the Devise's default modules, this app also uses
     [Confirmable](http://www.rubydoc.info/github/plataformatec/devise/Devise/Models/Confirmable),
     [Timeoutable](http://www.rubydoc.info/github/plataformatec/devise/Devise/Models/Timeoutable)
@@ -136,34 +113,11 @@ the following items:
     - Pundit is used for for authorization. The `User` model has an enum
     attribute called `role`. Its possible values are `:user` and `:admin`. The
     default value is `:user`.
-5. Customize the application colors by overwriting Bootstrap's variables in 
+6. Customize the application colors by overwriting Bootstrap's variables in
 `app/assets/stylesheets/global.scss`.
-6. Remove unused items from the application, such as gems from the `Gemfile`, 
-RSpec helpers, custom matchers and shared examples from `spec/support`. 
+7. Remove unused items from the application, such as gems from the `Gemfile`,
+RSpec helpers, custom matchers and shared examples from `spec/support`.
 
-## TODO
-- Set up CodeClimate with Rubocop, Reek and Brakeman engines.
-- Set up continuous integration.
-- Use Yarn instead of gems to install front end libraries such as jQuery and 
-Select2.
-- Add an asterisk to the labels of required form fields.
-- Internationalize and translate the JS front end, mainly `global.js` and 
-`zen-utils.js`.
-
-## Contributing
-
-**Bug reports**
-
-Please use the issue tracker to report any bugs.
-
-**Developing**
-
-1. Create an issue and describe your idea
-2. Fork it
-3. Create your feature branch (git checkout -b my-new-feature)
-4. Commit your changes (git commit -m 'Add some feature')
-5. Publish the branch (git push origin my-new-feature)
-6. Create a Pull Request
 
 ## License
 
