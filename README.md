@@ -91,7 +91,7 @@ steps as they are not specific to this base app.
 2. Clone the forked repository to your machine.
 3. Rename the application:
     1. *Required*: change the module name in `config/application.rb`
-from `ZenRailsBaseApp` to your application name, in camel case.
+from `NathanBaseApp` to your application name, in camel case.
     2. *Optional*: Use your IDE's "search all files" feature to find and
     replace the following strings:
         - Replace `nathans_base_app` by `your_app_name`
